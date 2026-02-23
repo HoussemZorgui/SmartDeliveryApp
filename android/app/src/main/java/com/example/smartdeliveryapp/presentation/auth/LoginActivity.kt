@@ -31,6 +31,10 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        binding.btnRegister.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
         viewModel.loginState.observe(this) { state ->
             when (state) {
                 is AuthState.Loading -> {

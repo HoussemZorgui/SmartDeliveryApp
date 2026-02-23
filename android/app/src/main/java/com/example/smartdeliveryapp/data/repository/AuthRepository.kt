@@ -27,6 +27,7 @@ class AuthRepository @Inject constructor(
                     .putString("jwt_token", token)
                     .putString("user_role", role)
                     .putString("user_id", userId)
+                    .putString("username", body["username"] as? String ?: "Utilisateur")
                     .apply()
                 
                 Result.success(true)
@@ -58,6 +59,7 @@ class AuthRepository @Inject constructor(
                     .putString("jwt_token", token)
                     .putString("user_role", userRole)
                      .putString("user_id", userId)
+                     .putString("username", username)
                     .apply()
                     
                 Result.success(true)
