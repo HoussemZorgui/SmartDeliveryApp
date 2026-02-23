@@ -7,6 +7,8 @@ const connectDB = require('./src/config/db');
 const { connectRedis } = require('./src/config/redis');
 const authRoutes = require('./src/routes/authRoutes');
 const orderRoutes = require('./src/routes/orderRoutes');
+const kycRoutes = require('./src/routes/kycRoutes');
+const adminRoutes = require('./src/routes/adminRoutes');
 const User = require('./src/models/User');
 
 // Connect to Database
@@ -28,9 +30,14 @@ app.set('socketio', io);
 app.use(cors());
 app.use(express.json());
 
+// Serve uploaded KYC files statically
+app.use('/uploads', express.static(require('path').join(__dirname, 'uploads')));
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/kyc', kycRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Basic Route
 app.get('/', (req, res) => {

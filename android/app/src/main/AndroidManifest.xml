@@ -7,15 +7,13 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
 
     <application
         android:name=".SmartDeliveryApplication"
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartDeliveryApp"
         android:usesCleartextTraffic="true"
@@ -33,6 +31,11 @@
         </activity>
         
         <activity android:name=".presentation.home.HomeActivity" />
+        <activity android:name=".presentation.kyc.KycActivity" />
+        <activity android:name=".presentation.order.CreateOrderActivity" />
+        <activity android:name=".presentation.auth.RegisterActivity" />
+        <activity android:name=".presentation.admin.AdminDashboardActivity" />
+        <activity android:name=".presentation.admin.AdminUserListActivity" />
         
         <service 
             android:name=".presentation.tracking.TrackingService"
