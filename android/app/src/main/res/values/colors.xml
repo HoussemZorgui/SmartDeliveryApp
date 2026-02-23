@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Premium Palette -->
+    <color name="primary_dark">#121212</color>
+    <color name="primary_light">#1E1E1E</color>
+    <color name="accent_volt">#32D74B</color> <!-- Bolt Green -->
+    <color name="accent_blue">#2979FF</color>
+    
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_hint">#666666</color>
+    
+    <color name="error">#FF453A</color>
+    <color name="success">#32D74B</color>
+    
+    <!-- Backgrounds -->
+    <color name="bg_dark">#000000</color>
+    <color name="surface_dark">#1C1C1E</color>
+    <color name="divider">#2C2C2E</color>
+</resources>

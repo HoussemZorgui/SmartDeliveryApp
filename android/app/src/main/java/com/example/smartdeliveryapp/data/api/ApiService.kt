@@ -11,21 +11,21 @@ interface ApiService {
     
     // Auth
     @POST("auth/register")
-    suspend fun register(@Body request: Map<String, Any>): Response<Map<String, Any>>
+    suspend fun register(@Body request: Map<String, String>): Response<Map<String, String>>
 
     @POST("auth/login")
-    suspend fun login(@Body request: Map<String, Any>): Response<Map<String, Any>>
+    suspend fun login(@Body request: Map<String, String>): Response<Map<String, String>>
 
     // Orders
     @POST("orders")
-    suspend fun createOrder(@Body request: Map<String, Any>): Response<Map<String, Any>>
+    suspend fun createOrder(@Body request: Map<String, String>): Response<Map<String, String>>
     
     @GET("orders/myorders")
-    suspend fun getMyOrders(): Response<List<Map<String, Any>>>
+    suspend fun getMyOrders(): Response<List<Map<String, String>>>
     
     @PUT("orders/{id}/status")
     suspend fun updateOrderStatus(
         @Path("id") id: String, 
         @Body request: Map<String, String>
-    ): Response<Map<String, Any>>
+    ): Response<Map<String, String>>
 }

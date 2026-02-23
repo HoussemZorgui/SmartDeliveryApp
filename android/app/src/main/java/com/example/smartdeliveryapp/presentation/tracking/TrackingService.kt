@@ -82,7 +82,7 @@ class TrackingService : Service() {
         val notification: Notification = NotificationCompat.Builder(this, channelId)
             .setContentTitle("Smart Delivery")
             .setContentText("Tracking is active...")
-            .setSmallIcon(R.mipmap.ic_launcher)
+            .setSmallIcon(R.drawable.ic_delivery_marker)
             .build()
 
         startForeground(1, notification)

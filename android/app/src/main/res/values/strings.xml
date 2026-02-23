@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Delivery</string>
+    <string name="login_title">Welcome back</string>
+    <string name="login_subtitle">Enter your details to continue</string>
+    <string name="email_hint">Email address</string>
+    <string name="password_hint">Password</string>
+    <string name="btn_login">Log In</string>
+    <string name="btn_register">Create Account</string>
+    <string name="forgot_password">Forgot Password?</string>
+</resources>
