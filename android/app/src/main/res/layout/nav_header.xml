@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:background="@color/surface_dark"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_profile"
+        android:background="@drawable/bg_selfie_circle"
+        android:padding="4dp"/>
+
+    <TextView
+        android:id="@+id/tvHeaderUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Utilisateur"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-black" />
+
+    <TextView
+        android:id="@+id/tvHeaderRole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Statut: Client"
+        android:textColor="@color/accent_volt"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif-medium" />
+
+</LinearLayout>
