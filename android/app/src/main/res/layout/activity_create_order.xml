@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    tools:context=".presentation.order.CreateOrderActivity">
+
+    <!-- Full-Screen Map -->
+    <org.osmdroid.views.MapView
+        android:id="@+id/orderMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="52dp"
+        android:paddingBottom="12dp"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:backgroundTint="@color/surface_dark"
+            app:icon="@drawable/ic_arrow_back"
+            app:iconTint="@color/text_primary"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.App.MediumComponent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:text="Nouvelle Course"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/text_primary" />
+    </LinearLayout>
+
+    <!-- Map Tap Instruction -->
+    <TextView
+        android:id="@+id/tvMapInstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/bg_status_banner"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="🟢  Appuyez pour choisir le point de DÉPART"
+        android:textColor="@color/text_primary"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="13sp" />
+
+    <!-- Map Center Pin Reference -->
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:translationY="-24dp"
+        android:src="@drawable/ic_delivery_marker"
+        android:alpha="0.5" />
+
+    <!-- Bottom Sheet -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/orderBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="280dp"
+        app:cardBackgroundColor="@color/surface_dark"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="16dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Handle -->
+            <View
+                android:layout_width="40dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_handle" />
+
+            <!-- Pickup Location -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🟢  Point de départ"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:id="@+id/pickupRow"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_field"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_location_green"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:id="@+id/tvPickupAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Appuyez sur la carte pour définir"
+                    android:textColor="@color/text_hint"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="14sp"
+                    android:ellipsize="end"
+                    android:maxLines="1" />
+            </LinearLayout>
+
+            <!-- Dropoff Location -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔴  Point d'arrivée"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:id="@+id/dropoffRow"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_field"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_location_red"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:id="@+id/tvDropoffAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="–"
+                    android:textColor="@color/text_hint"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="14sp"
+                    android:ellipsize="end"
+                    android:maxLines="1" />
+            </LinearLayout>
+
+            <!-- Price Estimate -->
+            <LinearLayout
+                android:id="@+id/priceRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Estimation"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvPriceEstimate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="– DT"
+                    android:textColor="@color/accent_volt"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <!-- Submit Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirmOrder"
+                style="@style/Widget.App.Button"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:text="Confirmer la Course"
+                android:textSize="17sp"
+                android:textAllCaps="false"
+                android:enabled="false"
+                app:backgroundTint="@color/divider"
+                android:textColor="@color/text_hint" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:indeterminateTint="@color/accent_volt"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
