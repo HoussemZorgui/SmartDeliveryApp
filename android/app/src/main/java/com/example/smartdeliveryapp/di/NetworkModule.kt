@@ -19,8 +19,8 @@ import javax.inject.Singleton
 object NetworkModule {
 
     // 10.0.2.2 is localhost for Android Emulator
-    private const val BASE_URL = "http://10.0.2.2:5001/api/"
-    private const val SOCKET_URL = "http://10.0.2.2:5001"
+    private const val BASE_URL = "http://192.168.100.6:5001/api/"
+    private const val SOCKET_URL = "http://192.168.100.6:5001"
 
     @Provides
     @Singleton
